@@ -1,0 +1,41 @@
+:root {
+  --bg: #f4f6f3; --card: #fff; --text: #1d2a1f; --muted: #6b7a6e;
+  --grid: #e8efe6; --snake: #2e8b4a; --head: #1f6b36; --food: #d6403a; --accent: #2e8b4a;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121712; --card: #1b231c; --text: #e6efe7; --muted: #8fa093;
+    --grid: #222d24; --snake: #4cc46f; --head: #7be09a; --food: #ff6b61; --accent: #4cc46f;
+    color-scheme: dark;
+  }
+}
+html, body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+body { min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 16px; gap: 12px; box-sizing: border-box; }
+h1 { margin: 4px 0 0; font-size: 1.5rem; }
+.bar { display: flex; gap: 20px; color: var(--muted); font-size: .95rem; }
+.bar b { color: var(--text); font-size: 1.1rem; }
+.wrap {
+  position: relative; width: min(92vw, 420px); aspect-ratio: 1;
+  background: var(--card); border-radius: 14px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .12);
+}
+canvas { width: 100%; height: 100%; display: block; touch-action: none; }
+.overlay {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 10px;
+  background: rgba(0, 0, 0, .45); color: #fff; text-align: center;
+}
+.overlay.hide { display: none; }
+.title { font-size: 1.3rem; font-weight: 600; }
+button { font: inherit; border: 0; border-radius: 10px; background: var(--accent); color: #fff; padding: 10px 20px; cursor: pointer; }
+.pad { display: grid; grid-template-columns: repeat(3, 64px); grid-template-rows: repeat(2, 52px); gap: 8px; }
+.pad button { background: var(--card); color: var(--text); box-shadow: 0 1px 4px rgba(0, 0, 0, .15); font-size: 1.3rem; padding: 0; }
+.pad .up { grid-column: 2; }
+.pad .l { grid-row: 2; grid-column: 1; }
+.pad .d { grid-row: 2; grid-column: 2; }
+.pad .r { grid-row: 2; grid-column: 3; }
+.hint { color: var(--muted); font-size: .85rem; text-align: center; }

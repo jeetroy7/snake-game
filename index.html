@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snake</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Snake</h1>
+<div class="bar"><span>Score <b id="score">0</b></span><span>Best <b id="best">0</b></span></div>
+<div class="wrap">
+  <canvas id="c" width="420" height="420"></canvas>
+  <div class="overlay" id="ov">
+    <div id="msg" class="title">Snake</div>
+    <div id="sub">Press any arrow key, or tap Start</div>
+    <button id="start">Start</button>
+  </div>
+</div>
+<div class="pad">
+  <button class="up" data-d="up" aria-label="Up">↑</button>
+  <button class="l" data-d="left" aria-label="Left">←</button>
+  <button class="d" data-d="down" aria-label="Down">↓</button>
+  <button class="r" data-d="right" aria-label="Right">→</button>
+</div>
+<div class="hint">Arrows or WASD to move · Space to pause · Swipe on the board</div>
+<script src="script.js"></script>
+</body>
+</html>
